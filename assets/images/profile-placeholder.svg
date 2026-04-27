@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Lekan Adeyeri profile placeholder</title>
+  <desc id="desc">Neutral circular profile placeholder with the initials LA.</desc>
+  <rect width="400" height="400" fill="#f3f3f3"/>
+  <circle cx="200" cy="200" r="164" fill="#ffffff" stroke="#d8d8d8" stroke-width="4"/>
+  <text x="200" y="220" text-anchor="middle" font-family="Lato, Verdana, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#555">LA</text>
+</svg>

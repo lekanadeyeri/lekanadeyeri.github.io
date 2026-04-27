@@ -1,0 +1,21 @@
+title: Lekan Adeyeri
+author: Lekan Adeyeri
+email: lekanadeyeri@gmail.com
+description: Personal academic and research homepage for Lekan Adeyeri.
+baseurl: ""
+url: ""
+scholar: https://scholar.google.com/citations?hl=en&user=VxTWNqgAAAAJ
+github: https://github.com/lekanadeyeri
+linkedin: https://www.linkedin.com/in/lekanadeyeri
+x: https://x.com/lekanadeyeri
+profile_image: assets/images/profile.png
+
+collections:
+  - publications
+
+exclude:
+  - _archive
+  - vendor
+  - .bundle
+  - README.md
+  - site-update-changelog.md

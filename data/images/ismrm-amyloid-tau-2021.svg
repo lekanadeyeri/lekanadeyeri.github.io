@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">ISMRM 2021 amyloid to tau thumbnail</title>
+  <desc id="desc">Minimal abstract thumbnail for a radiotracer generalization conference abstract.</desc>
+  <rect width="320" height="240" fill="#f6f6f6"/>
+  <path d="M70 84c30-36 74-36 104 0s74 36 104 0" fill="none" stroke="#1772d0" stroke-width="12" stroke-linecap="round"/>
+  <path d="M70 132c30 36 74 36 104 0s74-36 104 0" fill="none" stroke="#c46f39" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="70" cy="84" r="10" fill="#1772d0"/>
+  <circle cx="278" cy="132" r="10" fill="#c46f39"/>
+  <text x="160" y="184" text-anchor="middle" font-family="Lato, Verdana, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#333">ISMRM 2021</text>
+  <text x="160" y="210" text-anchor="middle" font-family="Lato, Verdana, Helvetica, sans-serif" font-size="15" fill="#555">amyloid to tau</text>
+</svg>

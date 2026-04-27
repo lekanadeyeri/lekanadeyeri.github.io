@@ -1,10 +1,135 @@
-<!doctype html>
-<html lang=en>
-<head>
-<meta charset=utf-8>
-<title>lekan.github.io</title>
-</head>
-<body>
-<p>Research Stuff</p>
+---
+---
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <script>
+      MathJax = {
+        options: {
+          enableMenu: false,
+        },
+        tex: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+        }
+      };
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <div class="introText">
+          <p class="name">{{ site.title }}</p>
+          <p>
+            I'm a computer science and physics undergraduate interested in computer vision, deep learning, medical imaging, 3D graphics, and tools that make technical creation more accessible.
+          </p>
+          <p class="profileLinks">
+            <a href="mailto:{{ site.email }}">Email</a>
+            <span>/</span>
+            <a href="{{ site.scholar }}" target="_blank" rel="noopener">Scholar</a>
+            <span>/</span>
+            <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
+            <span>/</span>
+            <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+            <span>/</span>
+            <a href="{{ site.x }}" target="_blank" rel="noopener">X</a>
+          </p>
+        </div>
+        <div class="portraitWrap">
+          <img class="portrait" src="{{ site.profile_image }}" alt="Profile photo of Lekan Adeyeri">
+        </div>
+      </header>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Lekan Adeyeri is a computer science and physics undergraduate on leave from Pitzer College within the Claremont Colleges. His work sits between computer vision, deep learning, 3D modelling, neural surrogates for physical simulation, and tools that make technical creation more accessible and sustainable. He has contributed to Stanford-led research on deep-learning enhancement of ultra-low-dose PET/MRI, worked on a GPT-3-powered chatbot and AI tooling during a Microsoft internship, and built production-oriented software systems across research, health technology, and developer tools. He is especially interested in learned representations that make physical and geometric processes smaller, more inspectable, and more efficient to run.
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>Undergraduate studies in computer science and physics</li>
+          <li><a href="https://www.pitzer.edu/" target="_blank" rel="noopener">Pitzer College</a> / the <a href="https://www.claremont.edu/" target="_blank" rel="noopener">Claremont Colleges</a></li>
+          <li>Currently on leave</li>
+        </ul>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <p>
+          I'm interested in computer vision, deep learning, medical imaging, 3D graphics, and the connection between physics, simulation, and learning-based systems. My research record is early-career and currently centers on coauthored medical imaging work that uses deep learning to enhance ultra-low-dose PET/MRI.
+        </p>
+      </section>
+
+      <section id="publications">
+        <h2>Selected Papers</h2>
+        {% assign publications = site.publications | where: "owner", "lekan" | sort: "sort_order" %}
+        {% if publications.size > 0 %}
+        <ul class="pubList">
+          {% for publication in publications %}
+          <li class="pubEntry">
+            <div class="pubEntryImgContainer">
+              {% if publication.image %}
+              <img class="pubEntryImg" src="{{ publication.image }}" alt="{{ publication.title | strip_html | escape }} thumbnail">
+              {% else %}
+              <img class="pubEntryImg" src="data/images/publication-placeholder.svg" alt="{{ publication.title | strip_html | escape }} thumbnail">
+              {% endif %}
+            </div>
+            <div class="pubEntryContent">
+              <h3 class="pubEntryTitle">
+                <a href="{{ publication.source }}" target="_blank" rel="noopener">
+                  {{ publication.title | markdownify }}
+                </a>
+              </h3>
+              <ul class="authorList">
+                {% for author in publication.authors %}
+                <li>{% if author.link %}<a href="{{ author.link }}" target="_blank" rel="noopener">{% endif %}{{ author.name }}{% if author.link %}</a>{% endif %}</li>
+                {% endfor %}
+              </ul>
+              <p class="publisher">{{ publication.publisher }}</p>
+              <div class="summary">
+                {{ publication.content | markdownify }}
+              </div>
+              <ul class="linkList">
+                {% for link in publication.links %}
+                <li><a href="{{ link[1] }}" target="_blank" rel="noopener">{{ link[0] }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>No selected papers are configured yet.</p>
+        {% endif %}
+      </section>
+
+      <footer>
+        <p>Last updated 2026.</p>
+      </footer>
+    </main>
+  
+
+
+<footer class="site-footer" style="max-width: 760px; margin: 44px auto 24px auto; padding: 0 24px; text-align: center; box-sizing: border-box;">
+  <p class="footer-note" style="font-size: 0.78rem; color: #888; line-height: 1.5; margin: 0 auto;">
+    Site adapted from the <a href="https://github.com/Computer-Vision-Group-Siegen/Computer-Vision-Group-Siegen.github.io" target="_blank" style="color: #777;">Computer Vision Group Siegen Jekyll template</a>, inspired by <a href="https://github.com/jonbarron/jonbarron.github.io" target="_blank" style="color: #777;">Jon Barron’s academic homepage</a>.
+  </p>
+</footer>
+
 </body>
 </html>
